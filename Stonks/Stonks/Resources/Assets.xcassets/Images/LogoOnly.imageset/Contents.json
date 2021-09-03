@@ -1,6 +1,7 @@
 {
-  "colors" : [
+  "images" : [
     {
+      "filename" : "LogoOnly.png",
       "idiom" : "universal"
     }
   ],

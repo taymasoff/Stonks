@@ -9,21 +9,31 @@
 /* Begin PBXBuildFile section */
 		222DFDB926E2608C00465E8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222DFDB826E2608C00465E8D /* AppDelegate.swift */; };
 		222DFDBB26E2608C00465E8D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222DFDBA26E2608C00465E8D /* SceneDelegate.swift */; };
-		222DFDBD26E2608C00465E8D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222DFDBC26E2608C00465E8D /* ViewController.swift */; };
+		222DFDBD26E2608C00465E8D /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222DFDBC26E2608C00465E8D /* SplashViewController.swift */; };
 		222DFDC026E2608C00465E8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 222DFDBE26E2608C00465E8D /* Main.storyboard */; };
 		222DFDC226E2609000465E8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 222DFDC126E2609000465E8D /* Assets.xcassets */; };
 		222DFDC526E2609000465E8D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 222DFDC326E2609000465E8D /* LaunchScreen.storyboard */; };
+		222DFDDC26E27C9A00465E8D /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 222DFDDA26E27C9A00465E8D /* Montserrat-Bold.ttf */; };
+		222DFDDD26E27C9A00465E8D /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 222DFDDB26E27C9A00465E8D /* Montserrat-Regular.ttf */; };
+		222DFDE126E2847800465E8D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222DFDE026E2847800465E8D /* Extensions.swift */; };
+		226224DE26E28DCD00814C97 /* StocksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226224DD26E28DCD00814C97 /* StocksViewController.swift */; };
+		226224E126E28F3D00814C97 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226224E026E28F3D00814C97 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		222DFDB526E2608C00465E8D /* Stonks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stonks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		222DFDB826E2608C00465E8D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		222DFDBA26E2608C00465E8D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		222DFDBC26E2608C00465E8D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		222DFDBC26E2608C00465E8D /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		222DFDBF26E2608C00465E8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		222DFDC126E2609000465E8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		222DFDC426E2609000465E8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		222DFDC626E2609000465E8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		222DFDDA26E27C9A00465E8D /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		222DFDDB26E27C9A00465E8D /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		222DFDE026E2847800465E8D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		226224DD26E28DCD00814C97 /* StocksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksViewController.swift; sourceTree = "<group>"; };
+		226224E026E28F3D00814C97 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +66,68 @@
 		222DFDB726E2608C00465E8D /* Stonks */ = {
 			isa = PBXGroup;
 			children = (
-				222DFDB826E2608C00465E8D /* AppDelegate.swift */,
-				222DFDBA26E2608C00465E8D /* SceneDelegate.swift */,
-				222DFDBC26E2608C00465E8D /* ViewController.swift */,
-				222DFDBE26E2608C00465E8D /* Main.storyboard */,
-				222DFDC126E2609000465E8D /* Assets.xcassets */,
-				222DFDC326E2609000465E8D /* LaunchScreen.storyboard */,
-				222DFDC626E2609000465E8D /* Info.plist */,
+				226224E526E2AB6C00814C97 /* Application */,
+				226224E826E2AB9300814C97 /* Controllers */,
+				226224E726E2AB7D00814C97 /* Storyboards */,
+				226224E426E2AB4800814C97 /* Resources */,
 			);
 			path = Stonks;
+			sourceTree = "<group>";
+		};
+		222DFDD826E27C5500465E8D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				222DFDD926E27C6000465E8D /* Montserrat */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		222DFDD926E27C6000465E8D /* Montserrat */ = {
+			isa = PBXGroup;
+			children = (
+				222DFDDA26E27C9A00465E8D /* Montserrat-Bold.ttf */,
+				222DFDDB26E27C9A00465E8D /* Montserrat-Regular.ttf */,
+			);
+			path = Montserrat;
+			sourceTree = "<group>";
+		};
+		226224E426E2AB4800814C97 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				222DFDC126E2609000465E8D /* Assets.xcassets */,
+				222DFDD826E27C5500465E8D /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		226224E526E2AB6C00814C97 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				222DFDB826E2608C00465E8D /* AppDelegate.swift */,
+				222DFDBA26E2608C00465E8D /* SceneDelegate.swift */,
+				222DFDE026E2847800465E8D /* Extensions.swift */,
+				226224E026E28F3D00814C97 /* Constants.swift */,
+				222DFDC626E2609000465E8D /* Info.plist */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		226224E726E2AB7D00814C97 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				222DFDBE26E2608C00465E8D /* Main.storyboard */,
+				222DFDC326E2609000465E8D /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		226224E826E2AB9300814C97 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				222DFDBC26E2608C00465E8D /* SplashViewController.swift */,
+				226224DD26E28DCD00814C97 /* StocksViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,8 +187,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				222DFDDC26E27C9A00465E8D /* Montserrat-Bold.ttf in Resources */,
 				222DFDC526E2609000465E8D /* LaunchScreen.storyboard in Resources */,
 				222DFDC226E2609000465E8D /* Assets.xcassets in Resources */,
+				222DFDDD26E27C9A00465E8D /* Montserrat-Regular.ttf in Resources */,
 				222DFDC026E2608C00465E8D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,9 +202,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				222DFDBD26E2608C00465E8D /* ViewController.swift in Sources */,
+				222DFDBD26E2608C00465E8D /* SplashViewController.swift in Sources */,
 				222DFDB926E2608C00465E8D /* AppDelegate.swift in Sources */,
 				222DFDBB26E2608C00465E8D /* SceneDelegate.swift in Sources */,
+				222DFDE126E2847800465E8D /* Extensions.swift in Sources */,
+				226224DE26E28DCD00814C97 /* StocksViewController.swift in Sources */,
+				226224E126E28F3D00814C97 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,7 +356,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JWKUVZUV6F;
-				INFOPLIST_FILE = Stonks/Info.plist;
+				INFOPLIST_FILE = Stonks/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,7 +375,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JWKUVZUV6F;
-				INFOPLIST_FILE = Stonks/Info.plist;
+				INFOPLIST_FILE = Stonks/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

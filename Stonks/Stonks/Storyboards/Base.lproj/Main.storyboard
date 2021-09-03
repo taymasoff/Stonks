@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Bold.ttf">
+            <string>Montserrat-Bold</string>
+        </array>
+        <array key="Montserrat-Regular.ttf">
+            <string>Montserrat-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Splash View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SplashViewController" customModule="Stonks" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoOnly" translatesAutoresizingMaskIntoConstraints="NO" id="fSc-XK-8Km">
+                                <rect key="frame" x="40" y="331.33333333333331" width="348" height="143.33333333333331"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="fSc-XK-8Km" secondAttribute="height" multiplier="269:111" priority="999" id="tB6-wB-Uzi"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stonks" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="LvY-FT-87W">
+                                <rect key="frame" x="101.33333333333333" y="484.66666666666669" width="225.33333333333337" height="58.333333333333314"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="120"/>
+                                <color key="textColor" name="BrandBlue"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact">
+                                    <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="50"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some news..." textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9yV-Rd-8Yn">
+                                <rect key="frame" x="40" y="548" width="348" height="23.333333333333371"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="60"/>
+                                <color key="textColor" name="BrandPink"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact">
+                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="20"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вы всегда можете свайпнуть  влево, чтобы пропустить анимацию" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eXw-pz-b4s">
+                                <rect key="frame" x="20" y="797" width="388" height="35"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="30"/>
+                                <color key="textColor" name="BrandBlue"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact">
+                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" name="AccentColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eXw-pz-b4s" secondAttribute="trailing" constant="20" id="O5a-xt-kHE"/>
+                            <constraint firstItem="LvY-FT-87W" firstAttribute="width" secondItem="fSc-XK-8Km" secondAttribute="height" multiplier="179:114" priority="998" id="e9N-nK-Hls"/>
+                            <constraint firstItem="9yV-Rd-8Yn" firstAttribute="top" secondItem="LvY-FT-87W" secondAttribute="bottom" constant="5" id="gGM-5v-b6c"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9yV-Rd-8Yn" secondAttribute="trailing" constant="40" id="k2D-6w-CNt"/>
+                            <constraint firstItem="fSc-XK-8Km" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="40" id="ksk-qt-JaB"/>
+                            <constraint firstItem="eXw-pz-b4s" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="m2n-GT-Tng"/>
+                            <constraint firstAttribute="trailing" secondItem="fSc-XK-8Km" secondAttribute="trailing" constant="40" id="mIU-Wz-L9Q"/>
+                            <constraint firstItem="LvY-FT-87W" firstAttribute="top" secondItem="fSc-XK-8Km" secondAttribute="bottom" constant="10" id="o13-nm-BMs"/>
+                            <constraint firstItem="LvY-FT-87W" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="o2D-RB-fB8"/>
+                            <constraint firstItem="9yV-Rd-8Yn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="o7D-c1-U69"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eXw-pz-b4s" secondAttribute="bottom" constant="60" id="vzB-vh-DbO"/>
+                            <constraint firstItem="fSc-XK-8Km" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-60" id="xYw-4C-fbU"/>
+                            <constraint firstItem="fSc-XK-8Km" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zV6-dT-ay0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="newsLabel" destination="9yV-Rd-8Yn" id="4Me-0s-lD8"/>
+                        <outlet property="tipLabel" destination="eXw-pz-b4s" id="uA1-Dz-sx9"/>
+                        <outlet property="titleLabel" destination="LvY-FT-87W" id="vOc-mB-pMp"/>
+                        <segue destination="b9t-iZ-gHE" kind="presentation" identifier="toStocksViewController" modalTransitionStyle="flipHorizontal" id="EAv-gd-voB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-214.4859813084112" y="75.809935205183592"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="gEr-nH-5Yu">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="b9t-iZ-gHE" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Dsi-yU-KVa">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="lFE-T8-dkP"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jlG-dk-4MZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="538" y="76"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="LogoOnly" width="964" height="380"/>
+        <namedColor name="AccentColor">
+            <color red="0.078000001609325409" green="0.0" blue="0.1289999932050705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="BrandBlue">
+            <color red="0.0" green="0.76899999380111694" blue="0.80000001192092896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="BrandPink">
+            <color red="0.89399999380111694" green="0.20000000298023224" blue="0.59200000762939453" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
