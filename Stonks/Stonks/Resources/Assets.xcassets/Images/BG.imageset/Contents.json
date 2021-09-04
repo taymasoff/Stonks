@@ -1,19 +1,8 @@
 {
   "images" : [
     {
-      "filename" : "bg@1x.png",
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "filename" : "bg@2x.png",
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "filename" : "bg.png",
-      "idiom" : "universal",
-      "scale" : "3x"
+      "filename" : "layered-steps-haikei.png",
+      "idiom" : "universal"
     }
   ],
   "info" : {

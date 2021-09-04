@@ -16,6 +16,8 @@
 		222DFDDC26E27C9A00465E8D /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 222DFDDA26E27C9A00465E8D /* Montserrat-Bold.ttf */; };
 		222DFDDD26E27C9A00465E8D /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 222DFDDB26E27C9A00465E8D /* Montserrat-Regular.ttf */; };
 		222DFDE126E2847800465E8D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222DFDE026E2847800465E8D /* Extensions.swift */; };
+		2254C29B26E3B03400CC58DD /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2254C29A26E3B03400CC58DD /* Request.swift */; };
+		2254C29E26E3B4D500CC58DD /* StockRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2254C29D26E3B4D500CC58DD /* StockRequests.swift */; };
 		226224DE26E28DCD00814C97 /* StocksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226224DD26E28DCD00814C97 /* StocksViewController.swift */; };
 		226224E126E28F3D00814C97 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226224E026E28F3D00814C97 /* Constants.swift */; };
 /* End PBXBuildFile section */
@@ -32,6 +34,8 @@
 		222DFDDA26E27C9A00465E8D /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		222DFDDB26E27C9A00465E8D /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		222DFDE026E2847800465E8D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		2254C29A26E3B03400CC58DD /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		2254C29D26E3B4D500CC58DD /* StockRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockRequests.swift; sourceTree = "<group>"; };
 		226224DD26E28DCD00814C97 /* StocksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksViewController.swift; sourceTree = "<group>"; };
 		226224E026E28F3D00814C97 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,6 +70,7 @@
 		222DFDB726E2608C00465E8D /* Stonks */ = {
 			isa = PBXGroup;
 			children = (
+				2254C29826E3AF7F00CC58DD /* BusinessLogic */,
 				226224E526E2AB6C00814C97 /* Application */,
 				226224E826E2AB9300814C97 /* Controllers */,
 				226224E726E2AB7D00814C97 /* Storyboards */,
@@ -89,6 +94,23 @@
 				222DFDDB26E27C9A00465E8D /* Montserrat-Regular.ttf */,
 			);
 			path = Montserrat;
+			sourceTree = "<group>";
+		};
+		2254C29826E3AF7F00CC58DD /* BusinessLogic */ = {
+			isa = PBXGroup;
+			children = (
+				2254C29926E3AF8800CC58DD /* Networking */,
+			);
+			path = BusinessLogic;
+			sourceTree = "<group>";
+		};
+		2254C29926E3AF8800CC58DD /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				2254C29A26E3B03400CC58DD /* Request.swift */,
+				2254C29D26E3B4D500CC58DD /* StockRequests.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		226224E426E2AB4800814C97 /* Resources */ = {
@@ -206,7 +228,9 @@
 				222DFDB926E2608C00465E8D /* AppDelegate.swift in Sources */,
 				222DFDBB26E2608C00465E8D /* SceneDelegate.swift in Sources */,
 				222DFDE126E2847800465E8D /* Extensions.swift in Sources */,
+				2254C29B26E3B03400CC58DD /* Request.swift in Sources */,
 				226224DE26E28DCD00814C97 /* StocksViewController.swift in Sources */,
+				2254C29E26E3B4D500CC58DD /* StockRequests.swift in Sources */,
 				226224E126E28F3D00814C97 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

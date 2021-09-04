@@ -9,7 +9,7 @@ import UIKit
 
 /*
  Приветственный экран приложения.
- При загрузке, отображает логотип, название приложения и строку последних новостей фондового рынка с анимацией набора текста. Следующий экран будет презентован автоматически, по истечению небольшого делея. Пользователь может скипнуть анимацию, свайпнув по экрану влево, тогда приложение прекратит анимацию и сразу перейдет к следующему экрану.
+ При загрузке, отображает логотип, название приложения и строку интересных фактов о фондовом рынке с анимацией набора текста. Следующий экран будет презентован автоматически, по истечению небольшого делея. Пользователь может скипнуть анимацию, свайпнув по экрану влево, тогда приложение прекратит анимацию и сразу перейдет к следующему экрану.
  */
 
 class SplashViewController: UIViewController {
@@ -17,7 +17,8 @@ class SplashViewController: UIViewController {
     // MARK: - Private Properties
     
     @IBOutlet weak fileprivate var titleLabel: UILabel!
-    @IBOutlet weak fileprivate var newsLabel: UILabel!
+    @IBOutlet weak fileprivate var didYouKnowLabel: UILabel!
+    @IBOutlet weak fileprivate var factsLabel: UILabel!
     @IBOutlet weak fileprivate var tipLabel: UILabel!
     
     private var typewriterTask: DispatchWorkItem?
@@ -27,7 +28,7 @@ class SplashViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         tipLabel.alpha = 0.0
         
         setupGestureRecognizer()
@@ -60,20 +61,20 @@ class SplashViewController: UIViewController {
         UIView.animate(
             withDuration: 0.3,
             delay: 0.5,
-            animations: {
-                self.tipLabel.alpha = 1.0
+            animations: { [weak self] in
+                self?.tipLabel.alpha = 1.0
             },
             completion: nil)
     }
     
     /// Метод, создающий задачу анимации набора текста для лейбла с новостями
     private func animateNewsLabel() {
-        typewriterTask = newsLabel.setTextWithTypeAnimation(
-            typedText: "123123123123123198237912648712638172638",
-            characterDelay: 7) { [weak self] in
+        typewriterTask = factsLabel.setTextWithTypeAnimation(
+            typedText: SomeFacts.facts.randomElement() ?? "No facts today 🤷",
+            characterDelay: 6) { [weak self] in
         
             // По завершению анимации ждем полторы секунды и переходим на экран Stocks
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 // Проверяем не была ли отменена задача
                 guard let task = self?.typewriterTask, !task.isCancelled else { return }
                 self?.segueToStocks()
