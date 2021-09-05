@@ -111,8 +111,8 @@ extension StocksViewController {
                 self.requestCompanyUpdate()
                 self.revealPickerViewAnimation()
             case .failure(let error):
-                print(error)
-                break
+                self.alert(message: error.localizedDescription,
+                           title: "😢 Произошла ошибка при запросе списка компаний.")
             }
         }
     }
@@ -139,8 +139,8 @@ extension StocksViewController {
             case .success(let logoURL):
                 self.requestLogoUpdate(with: logoURL.url)
             case .failure(let error):
-                print(error)
-                break
+                self.alert(message: error.localizedDescription,
+                           title: "😢Произошла ошибка при запросе url логотипа компании \(company.companyName).")
             }
         }
     }
@@ -164,8 +164,8 @@ extension StocksViewController {
                 self.updateLogo(with: logo)
                 
             case .failure(let error):
-                print(error)
-                break
+                self.alert(message: error.localizedDescription,
+                           title: "😢Произошла ошибка при попытке загрузки логотипа компании по адресу \(url).")
             }
         }
     }
@@ -187,8 +187,8 @@ extension StocksViewController {
                 self.updateUI(with: company)
                 
             case .failure(let error):
-                print(error)
-                break
+                self.alert(message: error.localizedDescription,
+                           title: "😢Произошла ошибка при запросе информации о компании \(company.companyName).")
             }
         }
     }

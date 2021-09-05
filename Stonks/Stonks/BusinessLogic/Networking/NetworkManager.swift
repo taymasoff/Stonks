@@ -7,16 +7,13 @@
 
 import UIKit
 
-public enum NetworkErrors: Error {
-    case badInput
-    case noData
-    case invalidResponse
-    case invalidStatusCode(Int)
-    case failedToDecode(String)
-}
-
+/// Класс овтечающий за работу сети в приложении
 class NetworkManager {
     
+    /// Выполнить запрос
+    /// - Parameters:
+    ///   - request: данные запроса в формате Request
+    ///   - completion: колбек
     func perform<T: Decodable>(request: Request,
                                completion: @escaping (Result<T, Error>) -> Void) {
         
@@ -48,8 +45,12 @@ class NetworkManager {
                     .failure(NetworkErrors.invalidStatusCode(urlResponse.statusCode)))
             }
             
+            // Проверяем есть ли дата
+            guard let data = data else {
+                return completionOnMain(.failure(NetworkErrors.noData))
+            }
+            
             // Декодируем дату
-            guard let data = data else { return }
             switch request.responseDataType {
             case .JSON:
                 // Если ответ в виде JSON'а, пробуем декодировать в нашу модель
@@ -58,7 +59,7 @@ class NetworkManager {
                     completionOnMain(.success(decodedData))
                 } catch {
                     completionOnMain(
-                        .failure(NetworkErrors.failedToDecode(error.localizedDescription)))
+                        .failure(NetworkErrors.failedToDecode("Не получилось декодировать JSON")))
                 }
             case .Data:
                 // Если ответ Data, пробуем преобразовать в изображение
