@@ -6,13 +6,15 @@
 //
 
 import UIKit
+import Network
 
 /*
  Приветственный экран приложения.
  При загрузке, отображает логотип, название приложения и строку интересных фактов о фондовом рынке с анимацией набора текста. Следующий экран будет презентован автоматически, по истечению небольшого делея. Пользователь может скипнуть анимацию, свайпнув по экрану влево, тогда приложение прекратит анимацию и сразу перейдет к следующему экрану.
+ Пока пользователь на этом экране, приложение мониторит интернет соединение, если его нет - всплывет предупреждение.
  */
 
-class SplashViewController: UIViewController {
+final class SplashViewController: UIViewController {
 
     // MARK: - Private Properties
     
@@ -24,11 +26,13 @@ class SplashViewController: UIViewController {
     private var typewriterTask: DispatchWorkItem?
     private var userSeenTheTip = false
     
+    let monitor = NWPathMonitor()
+    
     // MARK: - Lifecycle Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
         tipLabel.alpha = 0.0
         
         setupGestureRecognizer()
@@ -43,7 +47,16 @@ class SplashViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         
+        factsLabel.text = SomeFacts.facts.randomElement()
+        
+        startMonitoringInternetConnection()
         animateNewsLabel()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        
+        stopMonitoringInternetConnection()
     }
     
     // MARK: - Private Methods
@@ -70,15 +83,10 @@ class SplashViewController: UIViewController {
     /// Метод, создающий задачу анимации набора текста для лейбла с новостями
     private func animateNewsLabel() {
         typewriterTask = factsLabel.setTextWithTypeAnimation(
-            typedText: SomeFacts.facts.randomElement() ?? "No facts today 🤷",
-            characterDelay: 6) { [weak self] in
-        
-            // По завершению анимации ждем полторы секунды и переходим на экран Stocks
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                // Проверяем не была ли отменена задача
-                guard let task = self?.typewriterTask, !task.isCancelled else { return }
-                self?.segueToStocks()
-            }
+            typedText: factsLabel.text ?? "No facts today 🤷",
+            characterDelay: 7) { [weak self] in
+            
+            self?.segueToStocks(delayedFor: 2)
         }
         
         if let task = typewriterTask {
@@ -87,8 +95,11 @@ class SplashViewController: UIViewController {
             queue.asyncAfter(deadline: .now() + 0.05, execute: task)
         }
     }
-    
-    // MARK: - Segue Methods
+}
+
+// MARK: - Segue Methods
+
+extension SplashViewController {
     
     /// Метод, выполняющий переход на экран Stocks
     private func segueToStocks() {
@@ -97,7 +108,20 @@ class SplashViewController: UIViewController {
         performSegue(withIdentifier: Segues.toStocks, sender: self)
     }
     
-    // MARK: - UIGestureRecognizer Methods
+    // Перегруженный метод перехода на следующий экран, добавляет задержку до перехода
+    private func segueToStocks(delayedFor delay: Int) {
+        DispatchQueue.main.asyncAfter(deadline: .now() +
+                                        DispatchTimeInterval.seconds(delay)) { [weak self] in
+            // Проверяем не была ли отменена задача
+            guard let task = self?.typewriterTask, !task.isCancelled else { return }
+            self?.performSegue(withIdentifier: Segues.toStocks, sender: self)
+        }
+    }
+}
+
+// MARK: - UIGestureRecognizer Methods
+
+extension SplashViewController {
     
     /// Метод, добавляющий считыватель жестов на родительский view
     func setupGestureRecognizer() {
@@ -116,4 +140,31 @@ class SplashViewController: UIViewController {
         segueToStocks()
     }
 }
+
+// MARK: - Network connection Monitoring
+
+extension SplashViewController {
     
+    /// Начинает мониторить интернет соединение
+    private func startMonitoringInternetConnection() {
+        monitor.pathUpdateHandler = { [weak self] path in
+            guard path.status == .satisfied else {
+                DispatchQueue.main.async {
+                    self?.typewriterTask?.cancel()
+                    self?.alert(message: "Автор не успел реализовать работу приложения в офлайне, поэтому, пожалуйста, включите интернет и перезапустите приложение", title: "🚫📶 Интернет тю-тю 😢")
+                }
+                self?.monitor.cancel()
+                return
+            }
+        }
+        
+        let queue = DispatchQueue(label: "Network Monitor",
+                                  qos: .utility)
+        monitor.start(queue: queue)
+    }
+    
+    /// Заканчивает мониторить интернет соединение
+    private func stopMonitoringInternetConnection() {
+        monitor.cancel()
+    }
+}

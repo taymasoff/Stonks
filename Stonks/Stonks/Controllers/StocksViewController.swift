@@ -7,8 +7,15 @@
 
 import UIKit
 
+/*
+ Основной экран приложения.
+ При переходе на экран, приложение подгрузит список акций компаний по запросу updateCompaniesList, при любой ошибке всплывет UIAlert. При выборе компании подгружается информация об акциях и отображается на экране, параллельно подгружается URL и логотип компании.
+ Обратите внимание, что не все компании имеют логотип, если API возвращает пустой URL на логотип - вместо логотипа будет подставлена "затычка".
+ Лейбл изменения цены отслеживает положительное ли число каждый раз когда меняется его значение (с помощью didSet) и меняет цвет соотвественно (зеленый/красный/белый по умолчанию)
+ Все функции разгрупированы по extension'ам и промаркированы для удобства поиска
+ */
 
-class StocksViewController: UIViewController {
+final class StocksViewController: UIViewController {
     
     // MARK: - Outlets
     @IBOutlet weak fileprivate var companyLogoImageView: UIImageView!
@@ -35,6 +42,8 @@ class StocksViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         companyPickerView.dataSource = self
         companyPickerView.delegate = self
