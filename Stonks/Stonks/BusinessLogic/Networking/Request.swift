@@ -10,6 +10,9 @@ import Foundation
 /// Абстракция запроса
 public protocol Request {
     
+    /// Базовый URL запроса
+    var baseURL: String { get }
+    
     /// Путь запроса (напр. /stock/(symbol)/quote)
     var path: String { get }
     
@@ -19,11 +22,11 @@ public protocol Request {
     /// Параметры запроса. Передаются с телом запроса или URL
     var parameters: RequestParams { get }
     
-    /// Дополнительные заголовки к запросу
-    var headers: [String: Any]? { get }
-    
     /// Какой тип данных мы ожидаем на выходе Data/JSON
-    var dataType: DataType { get }
+    var responseDataType: DataType { get }
+    
+    /// Тип доступа (token/sandbox/notoken)
+    var accessType: AccessType { get }
 }
 
 public enum DataType {
@@ -42,4 +45,13 @@ public enum HTTPMethod: String {
 public enum RequestParams {
     case body(_ : [String: Any]?)
     case url(_ : [String: Any]?)
+    case empty
 }
+
+public enum AccessType {
+    case token(token: String)
+    case sandboxToken(token: String)
+    case noToken
+}
+
+

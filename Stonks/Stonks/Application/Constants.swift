@@ -15,6 +15,7 @@ enum Segues {
 /// Список констант, необходимых для нетворк запросов
 enum API {
     static let token = "pk_221b199b9b0c45e8a38aa9c32f4359bc"
+    static let sandboxToken = "Tpk_ee243f59a3584de784dbb1cf433843a1"
 }
 
 /// Массив интересных фактов про фондовый рынок, для вывода на приветственном экране
